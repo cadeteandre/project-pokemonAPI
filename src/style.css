@@ -38,3 +38,84 @@ img {
   width: 100px;
   height: 100px;
 }
+
+.pokemon__logo {
+  width: 225px;
+  height: 83px;
+}
+
+/* ---------------------- Styling buttons ---------------------- */
+.type__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+button {
+  color: #fff;
+  border: 1px solid #B3B3B3;
+  width: 120px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#bug {
+  background-color: #3BB900;
+}
+#dragon {
+  background-color: #00458A;
+}
+#electric {
+  background-color: #FFE600;
+}
+#dark {
+  background-color: #1C1C1C;
+}
+#fairy {
+  background-color: #FFC2F9;
+}
+#ghost {
+  background-color: #5A1E64;
+}
+#fighting {
+  background-color: #E40000;
+}
+#grass {
+  background-color: #57921C;
+}
+#fire {
+  background-color: #FF9900;
+}
+#ground {
+  background-color: #965A00;
+}
+#flying {
+  background-color: #CCDADD;
+}
+#ice {
+  background-color: #6AD2FF;
+}
+#normal {
+  background-color: #B3B3B3;
+}
+#rock {
+  background-color: #E1B237;
+}
+#steel {
+  background-color: #2A4950;
+}
+#poison {
+  background-color: #AB00AE;
+}
+#psychic {
+  background-color: #FF81F2;
+}
+#water {
+  background-color: #00A0E4;
+}
