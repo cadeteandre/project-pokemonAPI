@@ -10,4 +10,31 @@ body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#search__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#display__cards__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.poke_card {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
 }
