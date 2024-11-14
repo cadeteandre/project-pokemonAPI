@@ -19,7 +19,6 @@ async function fetchAllPokemon(url: string): Promise<void> {
         const result = await response.json() as IPokemonList;
         const pokemonURLArr = result.results.map((pokemon: IResult) => pokemon.url);
         pokemonArr = [...pokemonURLArr];
-        console.log("Fetched Pokemon URLs:", pokemonArr);
     } catch (err) {
         console.error(err);
     }
@@ -56,9 +55,7 @@ function matchBtnToType(pokemon: IPokemon): string {
 async function init() {
     await fetchAllPokemon(`${BASE_URL}/pokemon/?limit=200`);
     await Promise.all(pokemonArr.map(async (url) => await fetchSinglePokemon(url)));
-    console.log("Fetched Pokemon Data:", pokemonDataArr);
-    pokemonDataArr.sort((a: IPokemon, b: IPokemon) => a.id - b.id);
-    pokemonDataArr.forEach(async (pokemon) => await displayCard(pokemon));
+    pokemonDataArr.sort((a: IPokemon, b: IPokemon) => a.id - b.id).forEach(async (pokemon) => await displayCard(pokemon));
 }
 
 //* ------------------------ Events ------------------------
@@ -78,7 +75,6 @@ typeButtons.forEach((button) => {
 searchInput.addEventListener('input', () => {
     displayCardsWrapper.innerHTML = '';
     const pokemonName = searchInput.value.trim().toLowerCase();
-    console.log(pokemonName);
     const filteredPokemon = pokemonDataArr.filter(pokemon =>
         pokemon.name.toLowerCase().includes(pokemonName)
     );
