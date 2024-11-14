@@ -34,6 +34,12 @@ body {
   padding: 10px;
 }
 
+.poke_card div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 img {
   width: 100px;
   height: 100px;
@@ -53,6 +59,7 @@ img {
 }
 
 button {
+  display: block;
   color: #fff;
   border: 1px solid #B3B3B3;
   width: 120px;
@@ -65,57 +72,57 @@ button:hover {
   opacity: 0.7;
 }
 
-#bug {
+.bug {
   background-color: #3BB900;
 }
-#dragon {
+.dragon {
   background-color: #00458A;
 }
-#electric {
+.electric {
   background-color: #FFE600;
 }
-#dark {
+.dark {
   background-color: #1C1C1C;
 }
-#fairy {
+.fairy {
   background-color: #FFC2F9;
 }
-#ghost {
+.ghost {
   background-color: #5A1E64;
 }
-#fighting {
+.fighting {
   background-color: #E40000;
 }
-#grass {
+.grass {
   background-color: #57921C;
 }
-#fire {
+.fire {
   background-color: #FF9900;
 }
-#ground {
+.ground {
   background-color: #965A00;
 }
-#flying {
+.flying {
   background-color: #CCDADD;
 }
-#ice {
+.ice {
   background-color: #6AD2FF;
 }
-#normal {
+.normal {
   background-color: #B3B3B3;
 }
-#rock {
+.rock {
   background-color: #E1B237;
 }
-#steel {
+.steel {
   background-color: #2A4950;
 }
-#poison {
+.poison {
   background-color: #AB00AE;
 }
-#psychic {
+.psychic {
   background-color: #FF81F2;
 }
-#water {
+.water {
   background-color: #00A0E4;
 }

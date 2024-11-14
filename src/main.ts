@@ -34,24 +34,31 @@ async function fetchSinglePokemon(url: string): Promise<void> {
         console.error(err);
     }
 }
-function displayCard(pokemon: IPokemon): void {
+async function displayCard(pokemon: IPokemon): Promise<void> {
     displayCardsWrapper.innerHTML += `
         <div class="poke_card">
             <img src="${pokemon.sprites.other.dream_world.front_default}" />
             <div>
                 <p>#${pokemon.id.toString().padStart(3, '0')}</p>
                 <p>${pokemon.name}</p>
-                <p>${pokemon.types.map((types) => types.type.name ).join('')}</p>
+                ${matchBtnToType(pokemon)}
             </div>
         </div>
     `;
 }
 
+function matchBtnToType(pokemon: IPokemon): string {
+    const result = pokemon.types.map((types) => types.type.name);
+        return result.map((type) => `<button class="${type}">${type}</button>`).join('');
+}
+
+
 async function init() {
-    await fetchAllPokemon(`${BASE_URL}/pokemon`);
-    await Promise.all(pokemonArr.map(url => fetchSinglePokemon(url)));
+    await fetchAllPokemon(`${BASE_URL}/pokemon/?limit=200`);
+    await Promise.all(pokemonArr.map(async (url) => await fetchSinglePokemon(url)));
     console.log("Fetched Pokemon Data:", pokemonDataArr);
-    pokemonDataArr.forEach(pokemon => displayCard(pokemon));
+    pokemonDataArr.sort((a: IPokemon, b: IPokemon) => a.id - b.id);
+    pokemonDataArr.forEach(async (pokemon) => await displayCard(pokemon));
 }
 
 //* ------------------------ Events ------------------------
@@ -59,12 +66,12 @@ typeButtons.forEach((button) => {
     button.addEventListener('click', () => {
         displayCardsWrapper.innerHTML = '';
         const pokeType: IType = { type: { name: '' } };
-        pokeType.type.name = button.id;
+        pokeType.type.name = button.className;
         const filteredPokemon = pokemonDataArr.filter(pokemon =>
             pokemon.types.find((elt) => elt.type.name === pokeType.type.name) !== undefined
         );
 
-        filteredPokemon.forEach(pokemon => displayCard(pokemon));
+        filteredPokemon.forEach(async (pokemon) => await displayCard(pokemon));
     });
 });
 
@@ -79,3 +86,4 @@ searchInput.addEventListener('input', () => {
 });
 
 init();
+
