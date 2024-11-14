@@ -44,10 +44,12 @@ async function fetchSinglePokemon(url: string): Promise<void> {
 async function displayCard(pokemon: IPokemon): Promise<void> {
     displayCardsWrapper.innerHTML += `
         <div class="poke_card">
-            <img src="${pokemon.sprites.other.dream_world.front_default}" />
             <div>
-                <p>#${pokemon.id.toString().padStart(3, '0')}</p>
-                <p>${pokemon.name}</p>
+                <div class="poke_name_id">
+                    <p>#${pokemon.id.toString().padStart(3, '0')}</p>
+                    <p>${pokemon.name}</p>
+                </div>
+                <img src="${pokemon.sprites.other.dream_world.front_default}" />
                 ${matchBtnToType(pokemon)}
             </div>
         </div>
