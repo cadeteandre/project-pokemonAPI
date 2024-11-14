@@ -61,9 +61,9 @@ typeButtons.forEach((button) => {
         const pokeType: IType = { type: { name: '' } };
         pokeType.type.name = button.id;
         const filteredPokemon = pokemonDataArr.filter(pokemon =>
-            pokemon.types.find(type => type.type.name === pokeType.type.name) !== undefined
+            pokemon.types.find((elt) => elt.type.name === pokeType.type.name) !== undefined
         );
-        
+
         filteredPokemon.forEach(pokemon => displayCard(pokemon));
     });
 });
