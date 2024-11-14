@@ -3,6 +3,11 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url(./images/coast-landscape-digital-art.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
 }
 
 #app {
@@ -13,12 +18,22 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  
 }
 
 #search__wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 2%;
+}
+
+#search__input{
+  margin: 2%;
+  padding: 10px  ;
+  width: 20%;
+  border: 2px solid lightskyblue;
+  border-radius: 6px;
 }
 
 #display__cards__wrapper {
@@ -30,9 +45,14 @@ body {
 
 .poke_card {
   width: 180px;
-  border: 1px solid #000;
+  border: 1px solid #57cce1;
   border-radius: 10px;
   padding: 10px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);;
+  background-image: url(./images/blueBg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .poke_card div {
@@ -41,6 +61,11 @@ body {
   align-items: center;
   gap: 5px;
 }
+
+.poke_card div p{
+  color: white;
+  font-size:1.4rem;
+}  
 
 .poke_card div button {
   width: 80px;
@@ -61,7 +86,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
+  gap: 14px;
 }
 
 button {
@@ -71,12 +96,15 @@ button {
   width: 120px;
   border-radius: 5px;
   padding: 5px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), /* Hauptschatten */ 0 1px 3px rgba(0, 0, 0, 0.25); /* Sekundärer Schatten */ transition: box-shadow 0.3s ease;
 }
 
 button:hover {
   cursor: pointer;
   opacity: 0.7;
 }
+
+
 
 .bug {
   background-color: #3BB900;
