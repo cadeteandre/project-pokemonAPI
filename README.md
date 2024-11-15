@@ -2,7 +2,7 @@
 
 ## Overview
 
-_Pokédex_ is a project developed by a team of two members, cadeteandre and sharonVko. The project was designed entirely by us and built using Vite, HTML, CSS, and TypeScript. The data is fetched from an API, allowing users to search for their favorite Pokémon or filter by various Pokémon types. The Pokémon are displayed on cards across multiple pages (pagination).
+_Pokédex_ is a project developed by a team of two members, [cadeteandre](https://github.com/cadeteandre) and [sharonVko](https://github.com/sharonVko). The project was designed entirely by us and built using Vite, HTML, CSS, and TypeScript. The data is fetched from an API, allowing users to search for their favorite Pokémon or filter by various Pokémon types. The Pokémon are displayed on cards across multiple pages (pagination).
 
 ## Preview
 
