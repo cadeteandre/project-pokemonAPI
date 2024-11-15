@@ -10,7 +10,7 @@ const searchInput = document.querySelector('#search__input') as HTMLInputElement
 const nextButtons = document.querySelectorAll('.next') as NodeListOf<HTMLButtonElement>;
 const prevButtons = document.querySelectorAll('.prev') as NodeListOf<HTMLButtonElement>;
 
-//* ------------------------ Saveing fecth data ------------------------
+//* ------------------------ Saving fecth data ------------------------
 let pokemonArr: string[] = []; 
 let pokemonDataArr: IPokemon[] = []; 
 
@@ -112,6 +112,7 @@ async function fetchPokemonByName(name: string): Promise<void> {
         pokemonDataArr.push(pokemon);
 
         await displayCard(pokemon);
+        searchInput.value = '';
     } catch (err) {
         console.error(err);
         displayCardsWrapper.innerHTML = '<p>Error when searching for Pokémon</p>';
